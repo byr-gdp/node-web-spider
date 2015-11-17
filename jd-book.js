@@ -27,15 +27,17 @@ var url = "http://sale.jd.com/act/8Rso1fQu2E.html"
 
 download(url, function(data) {
     if (data) {
-        // console.log(data);
         var $ = cheerio.load(data);
 
         // 京东相关 间接性抽风
         $(".jItem").each(function(i, e) {
+            // 图书名
             var bookName = $(e).find(".jDesc").attr("title");
+            // 图书购买链接
+            var link = $(e).find(".jDesc a").attr("href");
             // var price  = $(e).find($(".jdPrice > span[class=jsNum]")).text();
-            var price = $(e).find(".jPrice .jdPrice span").text();
-            console.log(bookName + " - " + price);
+            // var price = $(e).find(".jPrice .jdPrice span").text();
+            console.log(bookName + " - " + link);
         })
     }
     else{
