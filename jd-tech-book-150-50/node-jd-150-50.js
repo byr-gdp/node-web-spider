@@ -1,7 +1,7 @@
-// 运行环境：浏览器控制台
+// 运行环境：node
 // 活动地址：http://sale.jd.com/act/8Rso1fQu2E.html
-// 作用：获得所有活动图书名字
-// 依赖：jd-150-50.js：在浏览器端运行获得活动图书书名详情并填充"str_books"
+// 作用：根据图书销售链接查询该图书 ISBN，继而通过豆瓣 api，查询该图书评分信息。另一种做法直接根据书名查询评分信息。相比前者直接上更准确。
+// 依赖：jd-150-50.js：在浏览器端运行获得活动图书书名详情并填充 "str_books" 和 "arr_urls"（需处理）
 
 var request = require("request");
 var cheerio = require("cheerio");
