@@ -1,5 +1,10 @@
+// 获取北邮人论坛（http://bbs.byr.cn）十大内容
+// 包括标题 - 作者 - 链接
+
 var http         = require("http");
 var cheerio      = require("cheerio");
+
+// 解决gbk 编码问题
 var iconv        = require('iconv-lite'); 
 var BufferHelper = require('bufferhelper');
 
@@ -22,7 +27,6 @@ var url = "http://bbs.byr.cn/rss/topten"
 
 download(url, function(data) {
     if (data) {
-        // console.log(data);
         var $ = cheerio.load(data);
         $("item").each(function(i, e) {
             var title = $(e).find("title").text();
