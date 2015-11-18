@@ -1,3 +1,10 @@
+// 获取京东科技图书 150 - 50 活动图书名字及价格
+// 活动链接见 url
+// 由于编码问题不能解决，退而求其次。详见目录"jd-tech-book-150-50"
+// 价格由于是 AJAX 获取，不能直接通过页面取得
+
+var url = "http://sale.jd.com/act/8Rso1fQu2E.html"
+
 var http         = require("http");
 var cheerio      = require("cheerio");
 var iconv        = require('iconv-lite'); 
@@ -15,7 +22,6 @@ function download(url, callback) {
         res.on("end", function() {
             // console.log('data: ' + data);
             callback(data);
-            // console.log(iconv.decode(bufferHelper.toBuffer(),'utf8'));
             // callback(iconv.decode(bufferHelper.toBuffer(), 'utf8'));
         });
     }).on("error", function() {
@@ -23,7 +29,6 @@ function download(url, callback) {
     });
 }
 
-var url = "http://sale.jd.com/act/8Rso1fQu2E.html"
 
 download(url, function(data) {
     if (data) {
