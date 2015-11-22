@@ -5,7 +5,7 @@ var url = "http://www.amazon.cn/s/ref=sr_pg_2?rh=n%3A658390051%2Cn%3A%2121466190
 
 var http         = require("http");
 var cheerio      = require("cheerio");
-// urf8编码不需要
+// urf8编码不需要以下
 // var iconv        = require('iconv-lite'); 
 // var BufferHelper = require('bufferhelper');
 
@@ -28,18 +28,15 @@ function download(url, callback) {
     });
 }
 
-
 download(url, function(data) {
     if (data) {
         var $ = cheerio.load(data);
-
         $("li[class='s-result-item celwidget']").each(function(i, e) {
             var bookName = $(e).find("h2[class='a-size-medium a-color-null s-inline s-access-title a-text-normal']").text();
             var price = $(e).find("span[class='a-size-base a-color-price s-price a-text-bold']").text();
             console.log(bookName + " - " + price);;
         })
-    }
-    else{
+    } else {
         console.log("error");
     }
 });
