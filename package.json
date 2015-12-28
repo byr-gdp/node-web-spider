@@ -1,0 +1,28 @@
+{
+  "name": "node-web-spider",
+  "version": "1.0.0",
+  "description": "以 Node.js 为基础，一些爬虫 demo 的集合",
+  "main": "amazon-book.js",
+  "dependencies": {
+    "bufferhelper": "^0.2.0",
+    "cheerio": "^0.19.0",
+    "encoding": "^0.1.11",
+    "iconv-lite": "^0.4.13",
+    "request": "^2.65.0",
+    "superagent": "^1.6.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/byr-gdp/node-web-spider.git"
+  },
+  "author": "byr-gdp",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/byr-gdp/node-web-spider/issues"
+  },
+  "homepage": "https://github.com/byr-gdp/node-web-spider#readme"
+}

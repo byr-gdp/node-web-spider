@@ -1,8 +1,8 @@
 // 获取北邮人论坛（http://bbs.byr.cn）十大内容
 // 包括标题 - 作者 - 链接
 
-var http         = require("http");
-var cheerio      = require("cheerio");
+var http    = require("http");
+var cheerio = require("cheerio");
 
 // 解决gbk 编码问题
 var iconv        = require('iconv-lite'); 
